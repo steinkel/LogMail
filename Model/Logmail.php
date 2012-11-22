@@ -151,8 +151,8 @@ class Logmail extends LogMailAppModel {
  */	
 	public function saveLog($from, $to, $headers, $body) {
 		$data = array();
-		$data[$this->alias]['sender'] = $from;
-		$data[$this->alias]['recipient'] = $to;
+		$data[$this->alias]['from'] = $from;
+		$data[$this->alias]['to'] = $to;
 		$data[$this->alias]['headers'] = $headers;
 		$data[$this->alias]['body'] = $body;
 		return $this->add($data);
