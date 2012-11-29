@@ -14,7 +14,7 @@ The master branch has the following requirements:
 ## Installation
 
 * Setup DebugKit
-* Run Migration
+* Run Migration Console/cake Migrations.migration run all --plugin LogMail
 * Add to AppController
     'DebugKit.Toolbar'=> array(
 		'panels' => array('LogMail.LogMail')),
@@ -32,5 +32,6 @@ The master branch has the following requirements:
 * Make output nice, something like from > to : subject
 * Store subject in database ?
 * test how html emails are displayed
+* use cache instead of the database for store the emails ?
 
 

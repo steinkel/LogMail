@@ -149,11 +149,12 @@ class Logmail extends LogMailAppModel {
  * @param AbstractTransport $transport
  * @param type $email
  */	
-	public function saveLog($from, $to, $headers, $body) {
+	public function saveLog($from, $to, $headers, $subject, $body) {
 		$data = array();
 		$data[$this->alias]['from'] = $from;
 		$data[$this->alias]['to'] = $to;
 		$data[$this->alias]['headers'] = $headers;
+		$data[$this->alias]['subject'] = $subject;
 		$data[$this->alias]['body'] = $body;
 		return $this->add($data);
 	}	

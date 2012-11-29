@@ -1,10 +1,12 @@
-<h2> <?php echo __d('logmail', 'Latest Emails'); ?></h2>
 <?php 
-// we need to move that to the component and check why from / to is not working now
-$content['Latest Emails'] = ClassRegistry::init('LogMail.Logmail')->find('all', array(
-	'limit' => 10,
-	'order' => 'created ASC'
-));
-echo $this->Toolbar->makeNeatArray($content); 
+	echo $this->Html->tag('h2', __d('logmail', 'Latest Emails, most recent first'));
 
-?>
+	$niceLatestEmails = array();
+	foreach ($latestEmails as $i => $email) {
+		$email = $email['Logmail'];
+		$niceKey = $i . ' - ' . $email['from'] . ' >> ' . $email['to'] . ' :: ' . $email['subject'];
+		$niceLatestEmails[$niceKey] = array('body' => $email['body']);
+	}
+
+$content['Latest Emails'] = $niceLatestEmails;
+echo $this->Toolbar->makeNeatArray($content);

@@ -23,6 +23,7 @@ class CreateTableLogmails extends CakeMigration {
 					'from' => array('type' => 'string', 'null' => false, 'default' => NULL),
 					'to' => array('type' => 'text', 'null' => false, 'default' => NULL),
 					'headers' => array('type' => 'text', 'null' => true, 'default' => NULL),
+					'subject' => array('type' => 'text', 'null' => true, 'default' => NULL),
 					'body' => array('type' => 'text', 'null' => true, 'default' => NULL),
 					'created' => array('type' => 'datetime', 'null' => true, 'default' => NULL),
 					'indexes' => array(
