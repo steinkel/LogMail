@@ -27,11 +27,8 @@ The master branch has the following requirements:
 # Documentation
 
 # Todo
-* Move find to the component
 * Add unit tests
-* Make output nice, something like from > to : subject
-* Store subject in database ?
-* test how html emails are displayed
+* display HTML emails correctly
 * use cache instead of the database for store the emails ?
 
 
