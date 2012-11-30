@@ -26,6 +26,8 @@ The master branch has the following requirements:
 
 # Documentation
 
+Important: This plugin is not for production use, it's aimed to stage and development environments
+
 # Todo
 * Add unit tests
 * display HTML emails correctly
