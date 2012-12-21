@@ -11,6 +11,9 @@ class LogmailsController extends LogMailAppController {
 		if (Configure::read('debug') === 0) {
 			$this->_stop();
 		}
+		if ($this->Auth) {
+			$this->Auth->allow(array('view'));
+		}
 	}
 
 /**
