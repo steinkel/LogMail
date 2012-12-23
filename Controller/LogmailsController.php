@@ -28,10 +28,10 @@ class LogmailsController extends LogMailAppController {
 		}
 		$email = $email['Logmail'];
 		// strip the html content
-		preg_match('/<body>(.*?)<\/body>/s', html_entity_decode($email['body']), $matches);
+		preg_match('/<html.*>(.*?)<\/html>/s', html_entity_decode($email['body']), $matches);
 		$body = __('No HTML email detected, check raw messages for text email');
-		if (!empty($matches[1])) {
-			$body = $matches[1];
+		if (!empty($matches[0])) {
+			$body = $matches[0];
 		}
 		$this->set('body', $body);
 	}
