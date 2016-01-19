@@ -24,9 +24,9 @@ class Logmail extends LogMailAppModel {
 		parent::__construct($id, $table, $ds);
 		$this->validate = array(
 			'from' => array(
-				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Sender', true))),
+				'notempty' => array('rule' => array('notBlank'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Sender', true))),
 			'to' => array(
-				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Recipient', true))),
+				'notempty' => array('rule' => array('notBlank'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Recipient', true))),
 		);
 	}
 
@@ -130,7 +130,7 @@ class Logmail extends LogMailAppModel {
 			$data['Logmail']['id'] = $id;
 			$tmp = $this->validate;
 			$this->validate = array(
-				'id' => array('rule' => 'notEmpty'),
+				'id' => array('rule' => 'notBlank'),
 				'confirm' => array('rule' => '[1]'));
 
 			$this->set($data);
