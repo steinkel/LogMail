@@ -1,5 +1,7 @@
 # CakePHP LogMail Plugin
 
+DEPRECATED: This project is no longer maintained.
+
 LogMail is a quick and dirty plugin to store all mail sent to the database and display latest emails in a DebugKit Panel
 
 ## Requirements
